@@ -6,7 +6,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Zenvibes INC.",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
 }
