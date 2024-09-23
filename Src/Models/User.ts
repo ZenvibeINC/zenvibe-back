@@ -1,10 +1,27 @@
-const {DataTypes} = require('sequelize');
+import { Sequelize, DataTypes, Model, Optional } from 'sequelize';
 
+interface UserAttributes {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+    address: string;
+    admin: boolean;
+}
 
-module.exports = (sequelize) => {
+interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
-    sequelize.define(
-        'User',
+export class User extends Model<UserAttributes, UserCreationAttributes> {
+    declare id: number;
+    declare name: string;
+    declare email: string;
+    declare password: string;
+    declare address: string;
+    declare admin: boolean;
+}
+
+export default (sequelize: Sequelize) => {
+    User.init(
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -30,12 +47,10 @@ module.exports = (sequelize) => {
             admin: {
                 type: DataTypes.BOOLEAN,
                 allowNull: false
-            },
-            creationDate: {
-                type: DataTypes.DATE,
-                allowNull: false
             }
+        },
+        {
+            sequelize
         }
-    )
-
+    );
 }
