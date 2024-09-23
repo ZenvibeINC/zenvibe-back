@@ -1,8 +1,13 @@
-import express from 'express';
+import express, { Application } from 'express';
+import productsRouter from './routes/productRoutes';
 import router from './routes';
 
-const server = express();
+
+const server: Application = express();
 server.use(express.json());
+
+//Products
+server.use('/products', productsRouter)
 
 server.use(router);
 
