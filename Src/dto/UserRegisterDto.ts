@@ -1,8 +1,9 @@
 interface UserRegisterDto {
     name: string,
     email: string,
-    phone: number,
-    active: boolean
+    password: string,
+    phone?: number,
+    // active?: booleann
 }
 
 export default UserRegisterDto;
