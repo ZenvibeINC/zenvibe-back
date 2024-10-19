@@ -11,8 +11,9 @@ export const registerUserService = async (userData: UserRegisterDto): Promise<IU
         id,
         name: userData.name,
         email: userData.email,
+        password: userData.password,
         phone: userData.phone,
-        active: userData.active
+        // active: userData.active
     }
 
     users.push(newUser);
