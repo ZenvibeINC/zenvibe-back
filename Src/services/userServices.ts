@@ -13,6 +13,7 @@ export const registerUserService = async (userData: UserRegisterDto): Promise<IU
         email: userData.email,
         password: userData.password,
         phone: userData.phone,
+        allowExtraEmails: userData.allowExtraEmails
         // active: userData.active
     }
 
