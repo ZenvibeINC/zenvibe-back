@@ -3,6 +3,7 @@ interface UserRegisterDto {
     email: string,
     password: string,
     phone?: number,
+    allowExtraEmails?: boolean;
     // active?: booleann
 }
 

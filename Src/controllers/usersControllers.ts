@@ -3,9 +3,9 @@ import { registerUserService, getUsersServices, deleteUserService } from "../ser
 import IUserRegister from "../interfaces/IUserRegister";
 
 export const registerUser = async (req: Request, res: Response) => {
-    const { name, email,password, phone } = req.body;
+    const { name, email,password, phone, allowExtraEmails } = req.body;
 
-    const newUser: IUserRegister = await registerUserService ({  name, email,password, phone});
+    const newUser: IUserRegister = await registerUserService ({  name, email,password, phone, allowExtraEmails});
     
 
     res.status(201).json(newUser);
